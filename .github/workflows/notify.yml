@@ -1,3 +1,5 @@
+name: notify
+on: [push]
 jobs:
   example-job:
     runs-on: ubuntu-latest
