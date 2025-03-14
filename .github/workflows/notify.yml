@@ -2,8 +2,12 @@ jobs:
   example-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Your previous build steps
-        
+      - name: Retrieve secret
+        env:
+          super_secret: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          echo "$super_secret"
+
       - name: Notify discord
         uses: th0th/notify-discord@v0.4.1
         if: ${{ always() }}
